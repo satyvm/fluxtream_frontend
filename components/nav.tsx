@@ -1,0 +1,40 @@
+"use client";
+
+import Image from "next/image";
+import Link from "next/link";
+import useScroll from "@/lib/use-scroll";
+
+export default function Nav() {
+    const scrolled = useScroll(50);
+
+    return (
+        <>
+            <div
+                className={`fixed top-2.5 w-full flex justify-center ${
+                    scrolled
+                        ? "border-b border-gray-200 bg-white/50 backdrop-blur-xl"
+                        : "bg-white/0"
+                } z-30 transition-all`}
+            >
+                <div className="mx-10 flex h-16 max-w-screen-xl items-center justify-between w-full">
+                    <Link href="/" className="flex items-center font-display text-2xl">
+                        <Image
+                            src="/FluXtream_logo_bw_big.png"
+                            alt="Precedent logo"
+                            width="60"
+                            height="30"
+                            className="mr-2 rounded-sm"
+                        ></Image>
+                    </Link>
+                    <div>
+                        <button
+                            className="rounded-full border border-black bg-black p-1.5 px-4 text-sm text-white transition-all hover:bg-white hover:text-black"
+                        >
+                               Open App
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </>
+    );
+}
