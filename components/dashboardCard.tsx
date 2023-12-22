@@ -9,7 +9,7 @@ export default function DashboardCard() {
     return(
         <div className="flex">
             <Tilt>
-                <div className="w-[1100px] h-[600px] bg-gray-500">
+                <div className="w-[1100px] h-[600px] bg-gray-500 rounded-b">
                     <Video src={dash} className=""/>
                 </div>
             </Tilt>

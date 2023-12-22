@@ -12,7 +12,7 @@ export default function Nav() {
             <div
                 className={`fixed top-0 w-full flex justify-center ${
                     scrolled
-                        ? "border-b border-gray-200 bg-white/50 backdrop-blur-xl"
+                        ? "border-b border-gray-200 bg-white/50 backdrop-blur-xl dark:bg-black/20"
                         : "bg-white/0"
                 } z-30 transition-all`}
             >
@@ -29,7 +29,9 @@ export default function Nav() {
                     <div>
                         <Link href="/dashboard">
                             <button
-                                className="rounded-full border border-black bg-black p-1.5 px-4 text-sm text-white transition-all hover:bg-white hover:text-black"
+                                className="rounded-full border border-black bg-black p-1.5 px-4 text-sm text-white transition-all
+                                hover:bg-white hover:text-black dark:bg-white dark:border-white dark:text-black
+                                dark:hover:bg-black dark:hover:text-white"
                             >
                                    Open App
                             </button>

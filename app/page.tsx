@@ -25,24 +25,29 @@ export default function Home() {
                           <FallingObjectsCanvas height={160}/>
                       </div>
               </div>
-              <div className="relative h-screen flex flex-col top-full">
-                  <div className="mb-24">
-                  <h1 className="font-poppins text-6xl text-center text-black dark:text-white p-24">
-                      Good-bye to traditional <br/> payment hassle.
-                  </h1>
-                  <CardStack />
-                  </div>
-                  <div className="flex flex-col items-center justify-center m-10 my-24">
-                      <Chip className="" variant="dot">
-                          Dashboard
-                      </Chip>
-                      <h1 className="font-poppins text-6xl text-center text-black dark:text-white p-12">
-                          All your streams at one place.
+                  <div className="relative h-full w-full flex flex-col top-full dark:bg-black">
+                      <div className="mb-24">
+                      <h1 className="font-poppins text-6xl text-center text-black dark:text-white p-24">
+                          Good-bye to traditional <br/> payment hassle.
                       </h1>
-                      <DashboardCard />
+                          <div className="flex justify-center">
+                              <CardStack />
+                          </div>
+                      </div>
+                      <div className="flex flex-col w-full h-full items-center justify-center dark:bg-black pt-24">
+                          <Chip className="dark:text-white" variant="dot">
+                              Dashboard
+                          </Chip>
+                          <h1 className="font-poppins text-6xl text-center text-black dark:text-white p-12">
+                              All your streams at one place.
+                          </h1>
+                          <DashboardCard />
+                      </div>
+                      <div>
+
+                      </div>
+                      <Footer />
                   </div>
-                  <Footer />
-              </div>
           </div>
       </main>
   )
