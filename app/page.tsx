@@ -3,6 +3,8 @@ import CardStack from "@/components/card";
 import FallingObjectsCanvas from "@/components/stream";
 import {Chip} from "@nextui-org/react";
 import DashboardCard from "@/components/dashboardCard";
+import Footer from "@/components/footer";
+import React from "react";
 
 export default function Home() {
   return (
@@ -30,7 +32,7 @@ export default function Home() {
                   </h1>
                   <CardStack />
                   </div>
-                  <div className="flex flex-col items-center justify-center m-10 mt-24">
+                  <div className="flex flex-col items-center justify-center m-10 my-24">
                       <Chip className="" variant="dot">
                           Dashboard
                       </Chip>
@@ -39,6 +41,7 @@ export default function Home() {
                       </h1>
                       <DashboardCard />
                   </div>
+                  <Footer />
               </div>
           </div>
       </main>
