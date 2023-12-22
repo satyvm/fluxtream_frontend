@@ -1,17 +1,30 @@
 import type { Config } from 'tailwindcss'
+import {nextui} from "@nextui-org/react";
 
 const config: Config = {
   content: [
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
     './app/**/*.{js,ts,jsx,tsx,mdx}',
+    "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     extend: {
+      colors: {
+        'neon': '#74ee15',
+      },
       fontFamily: {
         display: ["var(--font-sf)", "system-ui", "sans-serif"],
         default: ["var(--font-inter)", "system-ui", "sans-serif"],
         poppins: ["Poppins", "sans-serif"]
+      },
+      animation: {
+        // Fade up and down
+        "fade-up": "fade-up 0.5s",
+        "fade-down": "fade-down 0.5s",
+        // Tooltip
+        "slide-up-fade": "slide-up-fade 0.3s cubic-bezier(0.16, 1, 0.3, 1)",
+        "slide-down-fade": "slide-down-fade 0.3s cubic-bezier(0.16, 1, 0.3, 1)",
       },
       keyframes: {
         // Fade up and down
@@ -53,6 +66,6 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+  plugins: [nextui()],
 }
 export default config

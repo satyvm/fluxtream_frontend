@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useEffect, useRef } from "react";
+import React, {useEffect, useRef, useState} from "react";
 
 interface Object {
     type: string;
@@ -18,16 +18,22 @@ const FallingObjectsCanvas: React.FC<FallingObjectsCanvasProps> = ({ height }) =
     const canvasRef = useRef<HTMLCanvasElement | null>(null);
     const ctxRef = useRef<CanvasRenderingContext2D | null>(null);
     const objectsRef = useRef<Object[]>([]);
-    const spawnLineXRef = useRef<number>(25);
-    const spawnRateRef = useRef<number>(5);
-    const spawnRateOfDescentRef = useRef<number>(35);
+    const spawnLineXRef = useRef<number>(35);
+    const spawnRateRef = useRef<number>(20);
+    const spawnRateOfDescentRef = useRef<number>(40);
     const lastSpawnRef = useRef<number>(-1);
+    // const windowWidth = window?.screen.width || "N/A"
+    const [screenWidth, setScreenWidth] = useState<number | string>("N/a");
 
     useEffect(() => {
         const canvas = canvasRef.current;
         const ctx = canvas?.getContext("2d");
 
         if (!canvas || !ctx) return;
+
+        if (typeof window != 'undefined'){
+            setScreenWidth(window.screen.width);
+        }
 
         ctxRef.current = ctx;
 
@@ -93,7 +99,7 @@ const FallingObjectsCanvas: React.FC<FallingObjectsCanvasProps> = ({ height }) =
         animate();
     }, []);
 
-    return <canvas id="canvas" ref={canvasRef} width={window.screen.width} height={height} />;
+    return <canvas id="canvas" ref={canvasRef} width={screenWidth} height={height} />;
 };
 
 export default FallingObjectsCanvas;
